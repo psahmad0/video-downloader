@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Video Downloader</title>
+
+<style>
+
+body{
+font-family:Arial, sans-serif;
+background:#0f0f0f;
+color:white;
+margin:0;
+text-align:center;
+}
+
+.container{
+margin-top:120px;
+}
+
+h1{
+font-size:42px;
+margin-bottom:20px;
+}
+
+p{
+opacity:0.7;
+margin-bottom:30px;
+}
+
+input{
+width:60%;
+max-width:500px;
+padding:15px;
+font-size:16px;
+border:none;
+border-radius:6px;
+outline:none;
+}
+
+button{
+padding:15px 30px;
+font-size:16px;
+margin-left:10px;
+background:#ff3d00;
+color:white;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
+
+button:hover{
+background:#ff5722;
+}
+
+.footer{
+margin-top:120px;
+font-size:14px;
+opacity:0.6;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Video Downloader</h1>
+
+<p>Paste a video link and download it</p>
+
+<input id="url" placeholder="Paste video URL here">
+
+<button onclick="downloadVideo()">Download</button>
+
+</div>
+
+<div class="footer">
+Simple downloader demo
+</div>
+
+<script>
+
+function downloadVideo(){
+
+const url = document.getElementById("url").value
+
+if(!url){
+alert("Please paste a video link")
+return
+}
+
+const downloadURL = "/download?url=" + encodeURIComponent(url)
+
+window.open(downloadURL)
+
+}
+
+</script>
+
+</body>
+</html>
