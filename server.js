@@ -13,7 +13,7 @@ if(!url){
 return res.send("No URL provided")
 }
 
-const command = `yt-dlp.exe -f mp4 -g "${url}"`
+const command = `yt-dlp -f mp4 -g "${url}"`
 
 exec(command,(error,stdout,stderr)=>{
 
@@ -30,6 +30,8 @@ res.redirect(videoURL)
 
 })
 
-app.listen(3000,()=>{
+const PORT = process.env.PORT || 3000
+
+app.listen(PORT,()=>{
 console.log("Server running")
 })
